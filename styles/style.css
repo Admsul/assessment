@@ -18,9 +18,28 @@ body {
         gap: 2px;
     }
     
-    .nav-right a img {
+    .nav-right
+        display: flex;
+        align-items:center;
+        gap: 6px;
+        
+        div{
+            display:flex;
+            gap:20px;
+            align-items: center;
+        }
+    
+        a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none; /* optional, removes underline */
+        color: inherit; /* keeps your existing text color */
+        }
+
+        img {
         height: 32px;
-        margin-left: 12px;
+        margin-bottom: 4px; /* optional spacing between icon and text */
     }
 
 }
@@ -47,7 +66,7 @@ body {
 
                 &:hover {
                     background-color: white;
-                    color: black;
+                    color: rgb(114, 108, 108);
                 }
             }
         }
