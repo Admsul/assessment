@@ -17,9 +17,9 @@
                 <img src="images/logo.png" alt="Logo">
             </div>
             <div class="nav-center">
-                <form action="#" method="get">
-                <input type="text" name="search" placeholder="Search..." aria-label="Search">
-                <button type="submit">Search</button>
+                <form action="#">
+                <input type="text" name="search" id="search" placeholder="Search..." aria-label="Search">
+                <button id="searchButton" type="submit">Search</button>
                 </form>
             </div>
             <div class="nav-right">
@@ -33,9 +33,11 @@
         </div>
         <div id="nav-menu">
             <ul>
-                <li><a href="*">Link 1</a></li>
-                <li><a href="*">Link 2</a></li>
-                <li><a href="*">Link 3</a></li>
+                <li><a href="*">Home</a></li>
+                <li><a href="*">Blog</a></li>
+                <li><a href="*">Shop</a></li>
+                <li><a href="*">About</a></li>
+                <li><a href="*">Help</a></li>
             </ul>
         </div>
     </nav>
@@ -43,29 +45,24 @@
 
 <!-- body containing a form -->
 <body>
-    <form id="form" name="basicForm">
-        <fieldset>
-            <legend>Please enter your name</legend>
-            <label>
-                <input type="text" id="name" name="name" placeholder="name" value=""> name</label>
-        </fieldset>
-        <fieldset>
-            <legend>Enter an email address</legend>
-            <label>
-                <input type="text" id="email" name="email" placeholder="email" value=""> email address</label>
-        </fieldset>
-        <fieldset>
-            <legend>Enter a phone number</legend>
-            <label>
-                <input type="text" id="phoneNo" name="phoneNo" placeholder="phone Number" value=""> phone number</label>
-        </fieldset>
-        <fieldset>
-            <legend>Enter a postcode</legend>
-            <label>
-                <input type="text" id="placeholder" name="postcode" placeholder="postcode" value=""> post code</label>
-        </fieldset>
-    </form>
-    <button type="submit" onclick="validate()">Submit</button>
+    <div class="container">
+        <form id="form" name="basicForm">
+            <div>
+                <label>Please enter your name</label>
+                <input type="text" id="name" name="name" placeholder="name" value="">
+            </div>
+
+            <label>Enter an email address</label> 
+            <input type="text" id="email" name="email" placeholder="email" value="">
+
+            <label>Enter a phone number</label>
+            <input type="text" id="phoneNo" name="phoneNo" placeholder="phone number" value="">
+
+            <label>Enter a postcode</label>
+            <input type="text" id="placeholder" name="postcode" placeholder="postcode" value=""></label>
+        </form>
+        <button id="submit" type="submit" onclick="validate()">Submit</button>
+    </div>
 </body>
 
 <!-- footer containing a copyright with dynamically set year -->
