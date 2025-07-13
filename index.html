@@ -45,29 +45,48 @@
 
 <!-- body containing a form -->
 <body>
+
     <div class="container">
+
         <form id="form" name="basicForm">
+
             <div>
                 <label>Please enter your name</label>
                 <input type="text" id="name" name="name" placeholder="name" value="">
+                <span class="error" id="nameError"></span>
+            </div> 
+
+            <div>
+                <label>Enter an email address</label> 
+                <input type="text" id="email" name="email" placeholder="email" value="">
+                <span class="error" id="emailError"></span>
             </div>
 
-            <label>Enter an email address</label> 
-            <input type="text" id="email" name="email" placeholder="email" value="">
+            <div>
+                <label>Enter a phone number</label>
+                <input type="text" id="phoneNo" name="phoneNo" placeholder="phone number" value="">
+                <span class="error" id="phoneNoError"></span>
+            </div>
 
-            <label>Enter a phone number</label>
-            <input type="text" id="phoneNo" name="phoneNo" placeholder="phone number" value="">
+            <div>
+                <label>Enter a postcode</label>
+                <input type="text" id="placeholder" name="postcode" placeholder="postcode" value=""></label>
+                <span class="error" id="postcodeError"></span>
+            </div>
 
-            <label>Enter a postcode</label>
-            <input type="text" id="placeholder" name="postcode" placeholder="postcode" value=""></label>
         </form>
+        <span class="error" id="formError"></span>
         <button id="submit" type="submit" onclick="validate()">Submit</button>
+
     </div>
+
 </body>
 
 <!-- footer containing a copyright with dynamically set year -->
 <footer style="text-align:center; padding: 1em 0;">
+
     &copy; <span id="year"></span> Adam Sullivan. All rights reserved.
+
 </footer>
 
 </html>
