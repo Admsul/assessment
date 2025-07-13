@@ -8,44 +8,63 @@
     <script src="javascript/scripts.js"></script>
 </head>
 
+<!-- header containing a logo, search bar with account and help icons -->
 <header>
+    <!-- nav bar to have two rows -->
     <nav>
-        <img src="images/logo.png" alt="Logo">
-        <form action="#" method="get" style="display: inline;">
-            <input type="text" name="search" placeholder="Search..." aria-label="Search">
-            <button type="submit">Search</button>
-        </form>
-        <a href="*"><img src="images/logo.png" alt="account"></a>
-        <a href="*"><img src="images/logo.png" alt="help"></a>
+        <div id="nav-header">
+            <div class="nav-left">
+                <img src="images/logo.png" alt="Logo">
+            </div>
+            <div class="nav-center">
+                <form action="#" method="get">
+                <input type="text" name="search" placeholder="Search..." aria-label="Search">
+                <button type="submit">Search</button>
+                </form>
+            </div>
+            <div class="nav-right">
+                <a href="#"><img src="images/logo.png" alt="account"></a>
+                <a href="#"><img src="images/logo.png" alt="help"></a>
+            </div>
+        </div>
+        <div id="nav-menu">
+            <ul>
+                <li><a href="*">Link 1</a></li>
+                <li><a href="*">Link 2</a></li>
+                <li><a href="*">Link 3</a></li>
+            </ul>
+        </div>
     </nav>
 </header>
 
+<!-- body containing a form -->
 <body>
-    <form>
+    <form id="form">
         <fieldset>
             <legend>Please enter your name</legend>
             <label>
-                <input type="text" name="name" placeholder="name" value=""> name</label>
+                <input type="text" id="name" name="name" placeholder="name" value=""> name</label>
         </fieldset>
         <fieldset>
             <legend>Enter an email address</legend>
             <label>
-                <input type="text" name="email" placeholder="email" value=""> email address</label>
+                <input type="text" id="email" name="email" placeholder="email" value=""> email address</label>
         </fieldset>
         <fieldset>
             <legend>Enter a phone number</legend>
             <label>
-                <input type="text" name="phoneNo" placeholder="phone Number" value=""> phone number</label>
+                <input type="text" id="phoneNo" name="phoneNo" placeholder="phone Number" value=""> phone number</label>
         </fieldset>
         <fieldset>
             <legend>Enter a postcode</legend>
             <label>
-                <input type="text" name="postcode" placeholder="postcode" value=""> post code</label>
+                <input type="text" id="placeholder" name="postcode" placeholder="postcode" value=""> post code</label>
         </fieldset>
     </form>
     <button type="submit" onclick="validate">Submit</button>
 </body>
 
+<!-- footer containing a copyright with dynamically set year -->
 <footer style="text-align:center; padding: 1em 0;">
     &copy; <span id="year"></span> Adam Sullivan. All rights reserved.
 </footer>
