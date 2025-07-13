@@ -27,12 +27,20 @@ html, body {
         display: flex;
         gap: 2px;
 
+        @media (max-width: 600px) {
+            flex-direction: column;
+        }
+
     }
     
     .nav-right {
 
         display: flex;
         align-items:center;
+
+        @media (max-width: 600px) {
+            flex-direction: column;
+        }
         
         div{
 
@@ -171,6 +179,10 @@ input {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+
+    @media (max-width: 600px) {
+        width: 100%;
+    }
 
     &:hover {
         background-color: white;
