@@ -102,16 +102,21 @@ html, body {
 }
 
 #hamburgerButton{
+
     border: none;
     background-color: transparent;
     padding: 148.8px 0px 30px 37px;
 
     @media (min-width: 601px) {
+
         display: none;
+
     }
+
 }
 
 .hamburger {
+    
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -126,7 +131,7 @@ html, body {
         transition: 0.3s ease;
     
     }
-    
+
 }
 
 
