@@ -49,19 +49,20 @@ function validate() {
         isValid = false;
     }
 
-    console.log("Form submitted successfully with the following data:");
-    console.log("Name: " + name);
-    console.log("Email: " + email);
-    console.log("Phone Number: " + phoneNo); 
-
+    
     return isValid; // Form is valid
 }
 
 window.addEventListener('DOMContentLoaded', function() {
-  document.getElementById("form").addEventListener("submit", function (e) {
-    if (!validate()) {
-      e.preventDefault(); // Prevent submission if not valid
-    }
+    document.getElementById("form").addEventListener("submit", function (e) {
+        if (!validate()) {
+            e.preventDefault(); // Prevent submission if not valid
+        } else {
+        console.log("Form submitted successfully with the following data:");
+        console.log("Name: " + document.forms["basicForm"]["name"].value);
+        console.log("Email: " + document.forms["basicForm"]["email"].value);
+        console.log("Phone Number: " + document.forms["basicForm"]["phoneNo"].value);
+      }
   });
 });
 
@@ -77,6 +78,6 @@ function toggleMenu() {
     } else {
 
         box.style.display = 'none';
-        
+
     }
 };
