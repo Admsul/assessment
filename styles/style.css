@@ -113,28 +113,69 @@ html, body {
 
     }
 
-}
+} 
 
 .hamburger {
-    
     cursor: pointer;
     display: flex;
     flex-direction: column;
     gap: 5px;
 
-        span {
-    
+    span {
         display: block;
         width: 25px;
         height: 3px;
         background-color: #0A2846;
         transition: 0.3s ease;
-    
+    }
+}
+
+/* Cross (close) button styles */
+#closeButton{
+
+    border: none;
+    background-color: transparent;
+    padding: 20px 0 20px 37px;
+    display: none;
+
+} 
+.cross {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (min-width: 601px) {
+        
+        display: none;
+        
+    }
+    span {
+
+       position: absolute;
+       width: 25px;
+       height: 3px;
+       background-color: #0A2846;
+       border-radius: 2px;
+       transition: 0.3s ease;
+
+    }
+
+    span:first-child {
+
+        transform: rotate(45deg);
+
+    }
+    span:last-child {
+
+        transform: rotate(-45deg);
+
     }
 
 }
-
-
 
 #nav-menu {
 
@@ -144,20 +185,20 @@ html, body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     overflow: hidden;
-
+    
     @media (max-width: 600px) {
-
         padding-top: 128.8px;
-        flex-direction: column;
-        right: 0;
         display: none;
-
     }
-
+    
     ul {
-
         list-style-type: none;
         display: flex;
+        
+        @media (max-width: 600px) {
+            padding-left: 0px;
+            justify-content: center;
+        }
     
         li{
 

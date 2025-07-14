@@ -1,6 +1,6 @@
 // on page load to set the current year in the footer
 window.addEventListener('DOMContentLoaded', function() {
-    
+
     document.getElementById('year').textContent = new Date().getFullYear();
     document.getElementById("form").reset();
 
@@ -83,17 +83,21 @@ function validate(event) {
 // Hamburger menu style navbar
 function toggleMenu() {
 
-    const box = document.getElementById('nav-menu');
+    const menu = document.getElementById('nav-menu');
     const btn = document.getElementById('hamburgerButton');
+    const close = document.getElementById('closeButton');
 
-    if (box.style.display === 'none' || box.style.display === '') {
+    if (menu.style.display === 'none' || menu.style.display === '') {
 
-        box.style.display = 'block';
+        menu.style.display = 'block';
         btn.style.display = 'none';
+        close.style.display = 'block';
 
     } else {
 
-        box.style.display = 'none';
+        menu.style.display = 'none';
+        btn.style.display = 'block';
+        close.style.display = 'none';
 
     }
 };
