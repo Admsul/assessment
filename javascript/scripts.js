@@ -10,10 +10,10 @@ window.addEventListener('DOMContentLoaded', function() {
 function validate(event) {
 
     // Get all necessary variables
-    const name = document.forms["basicForm"]["name"].value;
-    const email = document.forms["basicForm"]["email"].value;
-    const phoneNo = document.forms["basicForm"]["phoneNo"].value;
-    const postcode = document.forms["basicForm"]["postcode"].value;
+    const name = document.forms["basicForm"]["name"].value.trim();
+    const email = document.forms["basicForm"]["email"].value.trim();
+    const phoneNo = document.forms["basicForm"]["phoneNo"].value.trim();
+    const postcode = document.forms["basicForm"]["postcode"].value.trim();
 
     // clear any previous errors
     document.getElementById("nameError").textContent = "";
@@ -75,13 +75,18 @@ function validate(event) {
         console.log("Form submission prevented due to validation errors.");
 
     } else {
-        // console log the form data
-        console.log("Form submitted successfully with the following data:");
-        console.log("Name: " + name);
-        console.log("Email: " + email);
-        console.log("Phone Number: " + phoneNo);
-        console.log("Postcode: " + postcode);
 
+        // results from the form are dynamically displayed in the div with id formData on the page
+        let output = 
+            `<div class="container">
+                <h3>Form Result</h3>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Phone Number:</strong> ${phoneNo}</p>
+                <p><strong>Postcode:</strong> ${postcode}</p>
+            </div>`;
+    
+        document.getElementById('formData').innerHTML = output;
     }
 
 }
