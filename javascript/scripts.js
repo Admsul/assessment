@@ -57,8 +57,26 @@ function validate() {
     return isValid; // Form is valid
 }
 
-document.getElementById("form").addEventListener("submit", function (e) {
-  if (!validate()) {
-    e.preventDefault(); // Prevent submission if not valid
-  }
+window.addEventListener('DOMContentLoaded', function() {
+  document.getElementById("form").addEventListener("submit", function (e) {
+    if (!validate()) {
+      e.preventDefault(); // Prevent submission if not valid
+    }
+  });
 });
+
+
+function toggleMenu() {
+    const box = document.getElementById('nav-menu');
+    const btn = document.getElementById('hamburgerButton');
+
+    if (box.style.display === 'none' || box.style.display === '') {
+
+        box.style.display = 'block';
+
+    } else {
+
+        box.style.display = 'none';
+        
+    }
+};

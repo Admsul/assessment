@@ -18,7 +18,7 @@ html, body {
     padding: 10px 20px 10px;
     background-color: white;
     filter: drop-shadow(0px 1px 10px #0A2846);
-
+    
     .nav-left img {
 
         height: 54.4px;
@@ -101,6 +101,36 @@ html, body {
 
 }
 
+#hamburgerButton{
+    border: none;
+    background-color: transparent;
+    padding: 148.8px 0px 30px 37px;
+
+    @media (min-width: 601px) {
+        display: none;
+    }
+}
+
+.hamburger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+        span {
+    
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #0A2846;
+        transition: 0.3s ease;
+    
+    }
+    
+}
+
+
+
 #nav-menu {
 
     background: linear-gradient(to right, #0A2846, #1863ad);
@@ -109,6 +139,15 @@ html, body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     overflow: hidden;
+
+    @media (max-width: 600px) {
+
+        padding-top: 128.8px;
+        flex-direction: column;
+        right: 0;
+        display: none;
+
+    }
 
     ul {
 

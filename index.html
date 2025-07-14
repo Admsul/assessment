@@ -18,13 +18,13 @@
             </div>
             <div class="nav-center">
                 <form action="#">
-                <input type="text" name="search" id="search" placeholder="Search..." aria-label="Search">
-                <button id="searchButton" type="submit">Search</button>
+                    <input type="text" name="search" id="search" placeholder="Search..." aria-label="Search">
+                    <button id="searchButton" type="submit">Search</button>
                 </form>
             </div>
             <div class="nav-right">
                 <div>
-                    <a href="#" ><img src="images/user-solid.svg" id="account" alt="account">account</a>
+                    <a href="#"><img src="images/user-solid.svg" id="account" alt="account">account</a>
                 </div>
                 <div>
                     <a href="#"><img src="images/question-solid.svg" alt="help">help</a>
@@ -41,6 +41,13 @@
             </ul>
         </div>
     </nav>
+    <button id="hamburgerButton" onclick="toggleMenu()">
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </button>
 </header>
 
 <!-- body containing a form -->
