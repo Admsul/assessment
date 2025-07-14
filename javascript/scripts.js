@@ -1,4 +1,4 @@
-// on page load to set the current year in the footer
+// on page load to dynamically set the current year in the footer
 window.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -6,6 +6,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 });
 
+// Function to validate the form
 function validate(event) {
 
     // Get all necessary variables
@@ -31,7 +32,8 @@ function validate(event) {
 
     }
 
-    //  phone number validation 
+    //  phone number validation using regex
+    // 1-11 digits, no letters or special characters
     const phoneNoPattern = /^\d{1,11}$/;
 
     if (!phoneNoPattern.test(phoneNo)) {
@@ -42,6 +44,7 @@ function validate(event) {
     }
 
     //  email validation can also use text.includes()
+    //  only Gmail and Outlook are allowed
     const gmailPattern = /^[^\s@]+@gmail\.com$/;
     const outlookPattern = /^[^\s@]+@outlook\.com$/;
 
@@ -52,6 +55,8 @@ function validate(event) {
 
     }
 
+    // check is postcode is empty
+    // possibility to add postcode lookup in the future
     if (postcode === "") {
 
         document.getElementById("postcodeError").textContent = "Please enter a postcode";
@@ -59,6 +64,7 @@ function validate(event) {
 
     }
 
+    // visual feedback for form validation
     console.log("Validation complete. Is form valid? " + isValid);
 
     // return isValid; // Form is valid
@@ -69,7 +75,7 @@ function validate(event) {
         console.log("Form submission prevented due to validation errors.");
 
     } else {
-
+        // console log the form data
         console.log("Form submitted successfully with the following data:");
         console.log("Name: " + name);
         console.log("Email: " + email);
@@ -83,10 +89,14 @@ function validate(event) {
 // Hamburger menu style navbar
 function toggleMenu() {
 
+    // Get the menu and buttons 
     const menu = document.getElementById('nav-menu');
     const btn = document.getElementById('hamburgerButton');
     const close = document.getElementById('closeButton');
 
+    // when clicked is the menu is hidden show it 
+    // hide the hamburger button
+    // show the close button
     if (menu.style.display === 'none' || menu.style.display === '') {
 
         menu.style.display = 'block';
@@ -95,6 +105,9 @@ function toggleMenu() {
 
     } else {
 
+        // here it does the reverse the menu is hidden if showing
+        // show the hamburger button
+        // hide the close button
         menu.style.display = 'none';
         btn.style.display = 'block';
         close.style.display = 'none';

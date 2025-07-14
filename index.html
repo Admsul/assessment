@@ -1,105 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adam Sullivan assessment for BGP</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <script src="javascript/scripts.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Adam Sullivan assessment for BGP</title>
+        <link rel="stylesheet" href="styles/style.css">
+        <script src="javascript/scripts.js"></script>
+    </head>
 
-<!-- header containing a logo, search bar with account and help icons -->
-<header>
-    <!-- nav bar to have two rows -->
-    <nav>
-        <div id="nav-header">
-            <div class="nav-left">
-                <img src="images/logo.png" alt="Logo">
-            </div>
-            <div class="nav-center">
-                <form action="#">
-                    <input type="text" name="search" id="search" placeholder="Search..." aria-label="Search">
-                    <button id="searchButton" type="submit">Search</button>
-                </form>
-            </div>
-            <div class="nav-right">
-                <div>
-                    <a href="#"><img src="images/user-solid.svg" id="account" alt="account">account</a>
+    <!-- header containing a logo, search bar with account and help icons -->
+    <header>
+
+        <!-- nav bar to have two rows-->
+        <nav>
+
+            <!-- first row to contain a logo, search bar and icons for account and help -->
+            <div id="nav-header">
+                <div class="nav-left">
+                    <img src="images/logo.png" alt="Logo">
                 </div>
-                <div>
-                    <a href="#"><img src="images/question-solid.svg" alt="help">help</a>
+                <div class="nav-center">
+                    <form action="#">
+                        <input type="text" name="search" id="search" placeholder="Search..." aria-label="Search">
+                        <button id="searchButton" type="submit">Search</button>
+                    </form>
+                </div>
+                <div class="nav-right">
+                    <div>
+                        <a href="#"><img src="images/user-solid.svg" id="account" alt="account">account</a>
+                    </div>
+                    <div>
+                        <a href="#"><img src="images/question-solid.svg" alt="help">help</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div id="nav-menu">
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Blog</a></li>
-                <li><a href="">Shop</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Help</a></li>
-            </ul>
-        </div>
-    </nav>
-    <button id="hamburgerButton" onclick="toggleMenu()">
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </button>
-    <button id="closeButton" onclick="toggleMenu()" >
-        <div class="cross" id="cross">
-            <span></span>
-            <span></span>
-        </div>
-    </button>
-</header>
 
-<!-- body containing a form -->
-<body>
-
-    <div class="container">
-
-        <form id="form" name="basicForm">
-
-            <div>
-                <label>Please enter your name</label>
-                <input type="text" id="name" name="name" placeholder="name" value="">
-                <span class="error" id="nameError"></span>
-            </div> 
-
-            <div>
-                <label>Enter an email address</label> 
-                <input type="text" id="email" name="email" placeholder="email" value="">
-                <span class="error" id="emailError"></span>
+            <!-- second row to contain a navigate menu -->
+            <div id="nav-menu">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Blog</a></li>
+                    <li><a href="">Shop</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Help</a></li>
+                </ul>
             </div>
+        </nav>
 
-            <div>
-                <label>Enter a phone number</label>
-                <input type="text" id="phoneNo" name="phoneNo" placeholder="phone number" value="">
-                <span class="error" id="phoneNoError"></span>
+        <!-- Hamburger button to open menu on screens smaller than 600px for mobile/tablet etc. -->
+        <button id="hamburgerButton" onclick="toggleMenu()">
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
+        </button>
 
-            <div>
-                <label>Enter a postcode</label>
-                <input type="text" id="placeholder" name="postcode" placeholder="postcode" value=""></label>
-                <span class="error" id="postcodeError"></span>
+        <!-- Cross to close menu on small screens  -->
+        <button id="closeButton" onclick="toggleMenu()" >
+            <div class="cross" id="cross">
+                <span></span>
+                <span></span>
             </div>
+        </button>
 
-        </form>
-        <span class="error" id="formError"></span>
-        <button id="submit" type="submit" onclick="validate()">Submit</button>
+    </header>
 
-    </div>
+    <!-- body containing a form -->
+    <body>
 
-</body>
+        <div class="container">
 
-<!-- footer containing a copyright with dynamically set year -->
-<footer style="text-align:center; padding: 1em 0;">
+            <form id="form" name="basicForm">
+                <div>
+                    <label>Please enter your name</label>
+                    <input type="text" id="name" name="name" placeholder="name" value="">
+                    <span class="error" id="nameError"></span>
+                </div> 
 
-    &copy; <span id="year"></span> Adam Sullivan. All rights reserved.
+                <div>
+                    <label>Enter an email address</label> 
+                    <input type="text" id="email" name="email" placeholder="email" value="">
+                    <span class="error" id="emailError"></span>
+                </div>
 
-</footer>
+                <div>
+                    <label>Enter a phone number</label>
+                    <input type="text" id="phoneNo" name="phoneNo" placeholder="phone number" value="">
+                    <span class="error" id="phoneNoError"></span>
+                </div>
+
+                <div>
+                    <label>Enter a postcode</label>
+                    <input type="text" id="placeholder" name="postcode" placeholder="postcode" value=""></label>
+                    <span class="error" id="postcodeError"></span>
+                </div>
+            </form>
+
+            <!-- submit button outside of form with an onclick function-->
+            <span class="error" id="formError"></span>
+            <button id="submit" type="submit" onclick="validate()">Submit</button>
+
+        </div>
+
+        <!-- spacer to push footer to bottom of page -->
+        <div class="spacer"></div>
+
+    </body>
+
+    <!-- footer containing a copyright with dynamically set year -->
+    <footer>
+        &copy; <span id="year"></span> Adam Sullivan. All rights reserved.
+    </footer>
 
 </html>
