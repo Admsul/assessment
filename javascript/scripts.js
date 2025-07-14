@@ -44,27 +44,29 @@ function validate() {
         isValid = false;
     }
 
-    if (name === "") {
+    if (postcode === "") {
         document.getElementById("postcodeError").textContent = "Please enter a postcode";
         isValid = false;
     }
 
-    
-    return isValid; // Form is valid
+    console.log("Validation complete. Is form valid? " + isValid);
+    // return isValid; // Form is valid
+
+    if (!isValid) {
+        // Prevent form submission if not valid
+        event && event.preventDefault();
+        console.log("Form submission prevented due to validation errors.");
+    } else {
+        console.log("Form submitted successfully with the following data:");
+        console.log("Name: " + name);
+        console.log("Email: " + email);
+        console.log("Phone Number: " + phoneNo);
+        console.log("Postcode: " + postcode);
+    }
 }
 
-window.addEventListener('DOMContentLoaded', function() {
-    document.getElementById("form").addEventListener("submit", function (e) {
-        if (!validate()) {
-            e.preventDefault(); // Prevent submission if not valid
-        } else {
-        console.log("Form submitted successfully with the following data:");
-        console.log("Name: " + document.forms["basicForm"]["name"].value);
-        console.log("Email: " + document.forms["basicForm"]["email"].value);
-        console.log("Phone Number: " + document.forms["basicForm"]["phoneNo"].value);
-      }
-  });
-});
+
+
 
 
 function toggleMenu() {
@@ -74,6 +76,7 @@ function toggleMenu() {
     if (box.style.display === 'none' || box.style.display === '') {
 
         box.style.display = 'block';
+        btn.style.display = 'none';
 
     } else {
 
