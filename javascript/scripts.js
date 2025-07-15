@@ -73,7 +73,8 @@ function validate(event) {
         // Prevent form submission if not valid
         if (event) event.preventDefault();
         console.log("Form submission prevented due to validation errors.");
-
+        // Clear the formData div if validation fails, this is to ensure no previous results are shown
+        document.getElementById('formData').innerHTML = "";
     } else {
 
         // results from the form are dynamically displayed in the div with id formData on the page
